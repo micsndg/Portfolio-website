@@ -16,25 +16,61 @@ export default function Home() {
       name: "Alaska Airlines",
       stack: "Objective-C, Swift, SwiftUI",
       summary:
-        "Contributed to enterprise airline mobile experiences with strong release quality and reliability.",
+        "Built features in the Alaska Hawaiian app that help travelers discover flight options, book trips, check in smoothly, and move through airports with less friction from pre-flight to boarding.",
+      links: {
+        appStore: "https://apps.apple.com/us/app/alaska-hawaiian/id356143077",
+        website: "",
+        github: "",
+        other: "",
+      },
     },
     {
       name: "Grill'd",
       stack: "Swift, MVVM-C",
       summary:
-        "Built scalable iOS features using clean modular architecture patterns.",
+        "Delivered mobile ordering experiences for delivery, takeaway, and in-restaurant table service, with full Relish loyalty integration, dietary and nutrition filters, and Local Matters community voting features.",
+      links: {
+        appStore: "https://apps.apple.com/au/app/grilld/id1228060909",
+        website: "",
+        github: "",
+        other: "https://appetiser.com.au/portfolio/grilld/",
+      },
     },
     {
       name: "Good Empire",
       stack: "Swift, MVVM-C",
       summary:
-        "Delivered customer-facing enhancements and workflow refinements for production apps.",
+        "Helped build a social action platform that gamifies sustainability through challenges mapped to the 17 UN Sustainable Development Goals, including daily actions, video submissions, and a ripple score that tracks measurable real-world impact.",
+      links: {
+        appStore: "",
+        website: "",
+        github: "",
+        other: "https://appetiser.com.au/portfolio/good-empire/",
+      },
+    },
+    {
+      name: "Activfy",
+      stack: "Swift, MVVM-C",
+      summary:
+        "Developed experiences for a fitness marketplace connecting users, trainers, and gyms, enabling personalized coaching journeys, stronger client engagement, wider service reach for fitness providers, and monetization opportunities through affiliate and product channels.",
+      links: {
+        appStore: "",
+        website: "",
+        github: "",
+        other: "https://appetiser.com.au/portfolio/activfy/",
+      },
     },
     {
       name: "OneRaise / AHF",
       stack: "Swift, MVVM-C",
       summary:
-        "Implemented key product features and performance improvements for mobile users.",
+        "Contributed to a dedicated fundraising platform for AIDS Healthcare Foundation that improves campaign reach, streamlines donor participation, and supports advocacy initiatives through mobile-first giving flows.",
+      links: {
+        appStore: "",
+        website: "",
+        github: "",
+        other: "https://appetiser.com.au/portfolio/ahf-oneraise/",
+      },
     },
   ];
 
@@ -145,6 +181,50 @@ export default function Home() {
                   <h3 className="mt-2 text-xl font-extrabold text-slate-900">{project.name}</h3>
                   <p className="mt-1 text-sm text-slate-600">{project.stack}</p>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{project.summary}</p>
+                  {Object.values(project.links).some(Boolean) && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.links.appStore && (
+                        <a
+                          href={project.links.appStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-500"
+                        >
+                          App Store
+                        </a>
+                      )}
+                      {project.links.website && (
+                        <a
+                          href={project.links.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-500"
+                        >
+                          Website
+                        </a>
+                      )}
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-500"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.links.other && (
+                        <a
+                          href={project.links.other}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-500"
+                        >
+                          Related Link
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
@@ -277,6 +357,50 @@ export default function Home() {
                   <h3 className="mt-4 text-2xl font-bold text-white">{project.name}</h3>
                   <p className="mt-2 text-sm text-white/60 font-semibold">{project.stack}</p>
                   <p className="mt-4 text-sm leading-7 text-white/70">{project.summary}</p>
+                  {Object.values(project.links).some(Boolean) && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.links.appStore && (
+                        <a
+                          href={project.links.appStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="border border-white/30 px-3 py-1 text-xs font-semibold text-white/90 hover:border-white"
+                        >
+                          App Store
+                        </a>
+                      )}
+                      {project.links.website && (
+                        <a
+                          href={project.links.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="border border-white/30 px-3 py-1 text-xs font-semibold text-white/90 hover:border-white"
+                        >
+                          Website
+                        </a>
+                      )}
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="border border-white/30 px-3 py-1 text-xs font-semibold text-white/90 hover:border-white"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.links.other && (
+                        <a
+                          href={project.links.other}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="border border-white/30 px-3 py-1 text-xs font-semibold text-white/90 hover:border-white"
+                        >
+                          Related Link
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
@@ -423,6 +547,50 @@ export default function Home() {
                   <h3 className="mt-1 text-xl font-extrabold text-white">{project.name}</h3>
                   <p className="mt-2 text-sm text-white/75">{project.stack}</p>
                   <p className="mt-3 text-sm leading-7 text-mist">{project.summary}</p>
+                  {Object.values(project.links).some(Boolean) && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.links.appStore && (
+                        <a
+                          href={project.links.appStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold text-white hover:border-white"
+                        >
+                          App Store
+                        </a>
+                      )}
+                      {project.links.website && (
+                        <a
+                          href={project.links.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold text-white hover:border-white"
+                        >
+                          Website
+                        </a>
+                      )}
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold text-white hover:border-white"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.links.other && (
+                        <a
+                          href={project.links.other}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold text-white hover:border-white"
+                        >
+                          Related Link
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </article>
             ))}

@@ -1,91 +1,114 @@
-# Professional Portfolio Website
+# Michael San Diego Portfolio
 
-Recruiter-facing portfolio built with Next.js and TailwindCSS.
+This is a recruiter-focused portfolio website built to present my iOS engineering work, experience, and selected projects.
 
-## Stack
+The project was created with AI assistance (GitHub Copilot) and then refined with custom content, design formats, and deployment setup.
 
-- Next.js (App Router + TypeScript)
-- TailwindCSS
-- Netlify hosting
+## Preview
 
-## Sections Included
+![Portfolio homepage preview](public/portfolio-screenshot.png)
 
-- Hero
-- Summary
-- Experience
-- Projects
-- Skills
-- Contact
+## What This Site Includes
 
-## Local Development
+- Professional hero and summary section
+- Experience section with career highlights
+- Project section with App Store and related links
+- Contact section with GitHub, LinkedIn, and resume download
+- Multiple visual themes that can be switched via environment variable
 
-Run the development server:
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- ESLint 9
+- Netlify deployment with `@netlify/plugin-nextjs`
+
+## Project Structure
+
+```
+app/
+	globals.css
+	layout.tsx
+	page.tsx
+public/
+	resume-michael-san-diego.pdf
+netlify.toml
+package.json
+```
+
+## Run Locally
+
+Prerequisite: Node.js 20+ recommended.
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
 
 ```bash
 npm run dev
 ```
 
-Open http://localhost:3000.
-
-Build for production:
+Create production build:
 
 ```bash
 npm run build
 ```
 
-## Switch Portfolio Format
+## Environment-Based Format Switching
 
-This project supports multiple page formats using an environment variable:
-
-- `figma` (default): Figma-inspired dark layout
-- `executive`: Light, recruiter-focused executive layout
-
-Set in `.env.local`:
+Set the active template in `.env.local`:
 
 ```bash
-NEXT_PUBLIC_PORTFOLIO_FORMAT=figma
+NEXT_PUBLIC_PORTFOLIO_FORMAT=all-black-template1
 ```
 
-or
+Available values:
 
-```bash
-NEXT_PUBLIC_PORTFOLIO_FORMAT=executive
-```
+- `all-black-template1` (dark Figma-inspired style)
+- `black-white-template` (minimal black and white style)
+- `executive` (light executive style)
 
-## Customize With Your Resume
+## Customize Content
 
-Update placeholder details in `app/page.tsx`:
+Update portfolio content in `app/page.tsx`:
 
-- Name and professional headline
-- Experience entries
-- Projects
-- Skills list
-- Contact information
+- `techStack` array
+- `projects` array (name, stack, summary, links)
+- `experience` array
+- Contact links and profile details
 
-## Push to GitHub
+Project link fields currently supported:
 
-If this repository is not connected yet:
-
-```bash
-git init
-git add .
-git commit -m "Initial portfolio website"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo>.git
-git push -u origin main
-```
-
-If this repo already exists, commit and push as usual.
+- `appStore`
+- `website`
+- `github`
+- `other`
 
 ## Deploy to Netlify
 
-This project includes `netlify.toml` with Next.js plugin support.
+This project is ready for Netlify deployment.
 
-Steps:
+1. Import the GitHub repository in Netlify.
+2. If your repo root is the parent folder, set Base directory to `.specify/workspace`.
+3. Build command: `npm run build`
+4. Publish directory: `.next`
+5. Add environment variable:
 
-1. Create a new site in Netlify and import your GitHub repository.
-2. Build command: `npm run build`
-3. Publish directory: `.next` (already configured in `netlify.toml`)
-4. Deploy.
+```bash
+NEXT_PUBLIC_PORTFOLIO_FORMAT=black-white-template
+```
 
-Netlify should auto-detect and use `@netlify/plugin-nextjs`.
+6. Trigger deploy.
+
+Netlify will use settings from `netlify.toml` and the Next.js plugin.
+
+## Notes
+
+- Every push to your main branch can trigger an automatic Netlify deploy.
+- The resume file is served from `public/resume-michael-san-diego.pdf`.
