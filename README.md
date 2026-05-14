@@ -6,7 +6,7 @@ The project was created with AI assistance (GitHub Copilot) and then refined wit
 
 ## Preview
 
-![Portfolio homepage preview](public/portfolio-screenshot.png)
+![Portfolio homepage preview](public/portfolio-screenshot.png?v=2)
 
 ## What This Site Includes
 
